@@ -14,7 +14,7 @@ services:
   app-timesheet:
     depends_on:
       - mysqldb
-    image: malekamri24/tp-foyer .
+    image: malekamri24/tp-foyer 
     #build : ./
     restart: on-failure
     ports:
