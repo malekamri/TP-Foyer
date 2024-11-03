@@ -66,6 +66,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>tp-foyer</finalName>
     </build>
 
     <!-- Deploy to Nexus -->
