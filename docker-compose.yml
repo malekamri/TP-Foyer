@@ -30,26 +30,5 @@ services:
     stdin_open: true
     tty: true
       
-
-    prometheus:
-      image: prom/prometheus:latest
-      restart: unless-stopped
-      ports:
-        - "9090:9090"  # Port pour accéder à l'interface utilisateur de Prometheus
-      volumes:
-        - ./prometheus.yml:/etc/prometheus/prometheus.yml  # Assurez-vous que ce fichier existe
-      command:
-        - '--config.file=/etc/prometheus/prometheus.yml'  # Spécifie le fichier de configuration
-  
-    grafana:
-      image: grafana/grafana:latest
-      restart: unless-stopped
-      ports:
-        - "3000:3000"  # Port pour accéder à l'interface utilisateur de Grafana
-      environment:
-        - GF_SECURITY_ADMIN_PASSWORD=admin  # Mot de passe admin par défaut
-      depends_on:
-        - prometheus  # Assurez-vous que Prometheus est prêt avant de démarrer Grafana
-  
   volumes:
     db:
